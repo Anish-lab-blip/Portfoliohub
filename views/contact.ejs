@@ -44,7 +44,11 @@
                         </p>
                         <% } %>
 
-                            <form action="/contact" method="POST">
+                            <form action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="a42464ca-8d48-4ea3-b9c4-5f84f6734555">
+                                <input type="hidden" name="subject" value="New Website Lead via Portfolio">
+                                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
                                 <div class="form-group">
                                     <label class="form-label">Your Name</label>
                                     <input type="text" name="name" class="form-control" placeholder="Jane Doe" required>
@@ -70,20 +74,23 @@
                                     <div class="form-group" style="flex: 1;">
                                         <label class="form-label">Budget Range</label>
                                         <select name="budget" class="form-control" style="background-color: #0a0a0a;">
-                                             <option>₹25k - ₹35k</option>
-                                            <option>₹35k - ₹45k</option>
-                                            <option>custom</option>
+                                            <option value="25k-35k">₹25,000 - ₹35,000</option>
+                                            <option value="35k-45k">₹35,000 - ₹45,000</option>
+                                            <option value="custom">Custom Budget</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label">Project Details</label>
-                                    <textarea name="details" class="form-control"
-                                        placeholder="What are we building? Any specific inspirations?"></textarea>
+                                    <textarea name="message" class="form-control"
+                                        placeholder="What are we building? Any specific inspirations?"
+                                        required></textarea>
                                 </div>
 
-                                <button type="submit" class="btn-primary">Request Quote</button>
+                                <button type="submit" class="btn-primary" style="transition: transform 0.2s ease;"
+                                    onmouseover="this.style.transform='scale(1.05)'"
+                                    onmouseout="this.style.transform='scale(1)'">Send Request 🚀</button>
                             </form>
         </section>
 
