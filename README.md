@@ -49,7 +49,7 @@ Plaintext
 
 │   ├── js/          # Universal Scripts (Global Nav, etc.)
 
-│   └── demos/       # The "Factory" - All demo sites live here
+│   └── demos/       # All demo sites live here
 
 ├── views/           # EJS Templates for the main Portfolio Hub
 
