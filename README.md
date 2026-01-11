@@ -41,17 +41,11 @@ Plaintext
 
 /
 ├── api/             # Express Server Logic (Vercel Entry Point)
-
 ├── public/          # Static Assets
-
 │   ├── css/         # Global Styles
-
 │   ├── js/          # Universal Scripts (Global Nav, etc.)
-
 │   └── demos/       # The "Factory" - All demo sites live here
-
 ├── views/           # EJS Templates for the main Portfolio Hub
-
 └── vercel.json      # Serverless Routing Configuration
 
 📬 Contact & Leads
