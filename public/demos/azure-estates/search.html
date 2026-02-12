@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Estates | Property Search</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#FAFAFA]">
+
+    <!-- Nav -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-6 h-24 flex justify-between items-center">
+            <a href="./index.html" class="flex flex-col items-center group">
+                <span class="font-serif text-2xl tracking-[0.2em] font-bold text-[#0F172A]">AZURE</span>
+                <span class="text-[0.5rem] tracking-[0.4em] uppercase text-gold-500 mt-1">Global Estates</span>
+            </a>
+            <div
+                class="hidden lg:flex items-center space-x-10 text-xs font-medium tracking-[0.15em] uppercase text-slate-500">
+                <a href="./index.html" class="nav-link hover:text-[#0F172A] transition">Home</a>
+                <a href="./listings.html" class="nav-link hover:text-[#0F172A] transition">Listings</a>
+                <a href="./about.html" class="nav-link hover:text-[#0F172A] transition">Heritage</a>
+                <a href="./agents.html" class="nav-link hover:text-[#0F172A] transition">Agents</a>
+                <a href="./sellers.html" class="nav-link hover:text-[#0F172A] transition">Valuation</a>
+                <a href="./lifestyle.html" class="nav-link hover:text-[#0F172A] transition">Lifestyle</a>
+                <a href="./contact.html"
+                    class="px-8 py-3 bg-[#0F172A] text-white hover:bg-[#D4AF37] transition duration-500">Private
+                    Office</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Header -->
+    <header class="pt-40 pb-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-gold text-xs tracking-[0.2em] uppercase font-bold mb-4 block">Discovery</span>
+                <h1 class="font-serif text-heading-2 text-[#0F172A]">Find Your Masterpiece</h1>
+            </div>
+
+            <!-- Filter UI -->
+            <div class="bg-[#FAFAFA] p-10 border border-gray-100 reveal delay-100">
+                <form class="grid grid-cols-1 md:grid-cols-4 gap-8 items-end">
+                    <div class="md:col-span-4">
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Location or
+                            Keyword</label>
+                        <input type="text" placeholder="e.g. Beverly Hills, Waterfront, Historic..."
+                            class="w-full input-luxury text-lg">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Price Range</label>
+                        <select class="w-full input-luxury bg-transparent cursor-pointer">
+                            <option>Any Price</option>
+                            <option>$1M - $5M</option>
+                            <option>$5M - $10M</option>
+                            <option>$10M - $25M</option>
+                            <option>$25M+</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Property Type</label>
+                        <select class="w-full input-luxury bg-transparent cursor-pointer">
+                            <option>All Types</option>
+                            <option>Villa</option>
+                            <option>Penthouse</option>
+                            <option>Estate</option>
+                            <option>Private Island</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gray-500 mb-2">Min. Bedrooms</label>
+                        <select class="w-full input-luxury bg-transparent cursor-pointer">
+                            <option>Any</option>
+                            <option>3+</option>
+                            <option>5+</option>
+                            <option>7+</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <button type="button" class="w-full btn-gold">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Results Grid -->
+    <section class="pb-32 px-6">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex justify-between items-end mb-12 border-b border-gray-200 pb-4">
+                <span class="font-serif text-2xl text-[#0F172A]">Featured Results</span>
+                <span class="text-xs tracking-widest uppercase text-gray-400">Showing 4 of 42</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
+
+                <!-- Item 1 -->
+                <div class="group reveal">
+                    <a href="./property-detail.html" class="block overflow-hidden mb-6 aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1600596542815-27b88e57e69f?auto=format&fit=crop&q=80"
+                            class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
+                            loading="lazy">
+                    </a>
+                    <div>
+                        <span class="text-gold text-[0.6rem] tracking-[0.2em] uppercase font-bold">Beverly Hills</span>
+                        <h3 class="font-serif text-2xl my-2 text-[#0F172A] group-hover:text-gold transition"><a
+                                href="./property-detail.html">The Summit Villa</a></h3>
+                        <p class="text-gray-400 text-sm mb-4 font-light">6 Bed | 8 Bath | 12,000 Sq. Ft</p>
+                        <span class="block text-lg font-medium text-[#0F172A]">$45,000,000</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group reveal">
+                    <a href="./property-detail.html" class="block overflow-hidden mb-6 aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80"
+                            class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
+                            loading="lazy">
+                    </a>
+                    <div>
+                        <span class="text-gold text-[0.6rem] tracking-[0.2em] uppercase font-bold">Manhattan</span>
+                        <h3 class="font-serif text-2xl my-2 text-[#0F172A] group-hover:text-gold transition"><a
+                                href="./property-detail.html">Skyline Penthouse</a></h3>
+                        <p class="text-gray-400 text-sm mb-4 font-light">3 Bed | 3.5 Bath | 4,500 Sq. Ft</p>
+                        <span class="block text-lg font-medium text-[#0F172A]">$28,500,000</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group reveal">
+                    <a href="./property-detail.html" class="block overflow-hidden mb-6 aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80"
+                            class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
+                            loading="lazy">
+                    </a>
+                    <div>
+                        <span class="text-gold text-[0.6rem] tracking-[0.2em] uppercase font-bold">Hamptons</span>
+                        <h3 class="font-serif text-2xl my-2 text-[#0F172A] group-hover:text-gold transition"><a
+                                href="./property-detail.html">Oceanfront Estate</a></h3>
+                        <p class="text-gray-400 text-sm mb-4 font-light">8 Bed | 10 Bath | 3 Acres</p>
+                        <span class="block text-lg font-medium text-[#0F172A]">$62,000,000</span>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="group reveal">
+                    <a href="./property-detail.html" class="block overflow-hidden mb-6 aspect-[3/4]">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80"
+                            class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
+                            loading="lazy">
+                    </a>
+                    <div>
+                        <span class="text-gold text-[0.6rem] tracking-[0.2em] uppercase font-bold">Miami</span>
+                        <h3 class="font-serif text-2xl my-2 text-[#0F172A] group-hover:text-gold transition"><a
+                                href="./property-detail.html">Modern Waterfront</a></h3>
+                        <p class="text-gray-400 text-sm mb-4 font-light">5 Bed | 6 Bath | Private Dock</p>
+                        <span class="block text-lg font-medium text-[#0F172A]">$22,000,000</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0F172A] text-white py-24 border-t border-gray-800">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div>
+                <span class="font-serif text-2xl tracking-widest block mb-8">AZURE</span>
+                <p class="text-gray-400 font-light text-sm leading-7">
+                    The world's most exclusive properties,<br>curated for the discerning few.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-serif text-lg mb-6 text-gold">Discover</h4>
+                <ul class="space-y-4 text-sm tracking-widest uppercase text-gray-400">
+                    <li><a href="./search.html" class="hover:text-white">Search</a></li>
+                    <li><a href="./agents.html" class="hover:text-white">Our Team</a></li>
+                    <li><a href="./sellers.html" class="hover:text-white">Sell</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif text-lg mb-6 text-gold">Contact</h4>
+                <p class="text-gray-400 text-sm mb-2">VIP@azureestates.com</p>
+                <p class="text-gray-400 text-sm">1-800-AZURE-VIP</p>
+            </div>
+            <div>
+                <h4 class="font-serif text-lg mb-6 text-gold">Newsletter</h4>
+                <input type="email" placeholder="Email Address"
+                    class="w-full bg-transparent border-b border-gray-700 py-2 focus:outline-none focus:border-gold text-sm mb-4 placeholder:text-gray-600">
+                <button
+                    class="text-xs uppercase tracking-widest text-[#D4AF37] hover:text-white transition">Subscribe</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

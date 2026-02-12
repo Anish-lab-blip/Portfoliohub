@@ -1,10 +1,12 @@
-/* Azure Estates - Luxury Design System */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-    --color-gold: #D4AF37;
+    --color-gold: #C5A028;
+    --color-gold-light: #D4AF37;
     --color-navy: #0F172A;
     --color-offwhite: #FAFAFA;
+    --ease-luxury: cubic-bezier(0.4, 0, 0.2, 1);
+    /* Custom "Luxury" Easing */
 }
 
 body {
@@ -12,6 +14,8 @@ body {
     color: var(--color-navy);
     font-family: 'Manrope', sans-serif;
     overflow-x: hidden;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -24,94 +28,182 @@ h6,
     font-family: 'Playfair Display', serif;
 }
 
+/* Enforce font consistency on form elements */
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+}
+
+/* Typography Scale */
+.text-heading-1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+.text-heading-2 {
+    font-size: 3rem;
+    line-height: 1.25;
+    font-weight: 400;
+}
+
+.text-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #475569;
+}
+
 /* Utilities */
 .text-gold {
     color: var(--color-gold) !important;
 }
 
 .bg-gold {
-    background-color: var(--color-gold) !important;
+    background-color: var(--color-gold-light) !important;
 }
 
 .border-gold {
-    border-color: var(--color-gold) !important;
+    border-color: var(--color-gold-light) !important;
 }
 
 /* Cinematic Hero */
 .hero-scrim {
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 0) 50%, rgba(15, 23, 42, 0.6) 100%);
+    background: linear-gradient(180deg,
+            rgba(15, 23, 42, 0.4) 0%,
+            rgba(15, 23, 42, 0.1) 40%,
+            rgba(15, 23, 42, 0.8) 100%);
 }
 
-/* Ken Burns Effect */
 @keyframes kenburns {
     0% {
         transform: scale(1);
     }
 
     100% {
-        transform: scale(1.15);
+        transform: scale(1.1);
     }
 }
 
 .ken-burns {
-    animation: kenburns 20s ease-out infinite alternate;
+    animation: kenburns 25s ease-out infinite alternate;
 }
 
 /* Form Styles */
 .input-luxury {
     background: transparent;
     border-bottom: 1px solid #cbd5e1;
-    padding: 1rem 0;
-    transition: all 0.3s ease;
+    padding: 1.25rem 0;
+    transition: all 0.6s var(--ease-luxury);
     border-radius: 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
 }
 
 .input-luxury:focus {
     border-bottom-color: var(--color-gold);
     outline: none;
+    padding-left: 1rem;
+    /* Subtle shift on focus */
+}
+
+.input-luxury::placeholder {
+    color: #94a3b8;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
 }
 
 /* Buttons */
 .btn-gold {
-    background-color: var(--color-gold);
-    color: white;
-    padding: 1rem 2.5rem;
-    letter-spacing: 0.15em;
+    background-color: var(--color-gold-light);
+    color: var(--color-navy);
+    padding: 1.25rem 3rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    font-size: 0.7rem;
+    font-weight: 700;
+    transition: all 0.6s var(--ease-luxury);
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-gold:hover {
     background-color: #b5952f;
-    transform: translateY(-2px);
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px -10px rgba(212, 175, 55, 0.4);
 }
 
 .btn-outline {
-    border: 1px solid var(--color-navy);
+    border: 1px solid rgba(15, 23, 42, 0.3);
     color: var(--color-navy);
-    padding: 1rem 2.5rem;
-    letter-spacing: 0.15em;
+    padding: 1.25rem 3rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.6s var(--ease-luxury);
 }
 
 .btn-outline:hover {
+    border-color: var(--color-navy);
     background-color: var(--color-navy);
-    color: white;
+    color: #fff;
+    transform: translateY(-4px);
 }
 
-/* Nav Active State */
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    letter-spacing: 0.15em;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-gold);
+    transition: width 0.6s var(--ease-luxury);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
 .nav-link.active {
-    border-bottom: 2px solid var(--color-gold);
+    border-bottom: none;
     color: var(--color-navy);
 }
 
-/* Sticky Agent Sidebar */
+/* Sidebar */
 .agent-card-sticky {
     position: sticky;
-    top: 100px;
+    top: 120px;
 }
+
+/* Animation Utilities */
+/* Only hide if the element DOES NOT have the active class AND we haven't failed safe yet */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s var(--ease-luxury), transform 1.2s var(--ease-luxury);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* No-JS fallback / Failsafe override if needed:
+   We can't easily detect JS failure in CSS without a .no-js class on body.
+   However, the JS failsafe above handles strict removal.
+*/
